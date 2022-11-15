@@ -337,7 +337,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4888065085526090206}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc22e613678b5f3429c30e7a8354ce01, type: 3}
   m_Name: 
@@ -356,8 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afdf9ff9348ba5f48ad4ce03341620e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifes: {fileID: 0}
-  inmunityTimer: {fileID: 0}
   startLife: 3
   player: {fileID: 4886839378987337284}
   counter: 0

@@ -15,6 +15,10 @@ public class Move : MonoBehaviour
 
     [SerializeField] private GameObject body;
 
+    private bool isJumping;
+    private bool isGrounded;
+
+
     CharacterController playerController;
     Vector3 moveVelocity;
     Vector3 turnVelocity;
@@ -28,6 +32,12 @@ public class Move : MonoBehaviour
         //transform.Rotate(new Vector3(0, 180, 0));
     }
 
+    void Attack()
+    {
+        animator.SetTrigger("Attack");
+
+    }
+
     // NOTA: SI QUIERES MOVIMIENTO Y ROTACIÓN, SOLO DESCOMENTA LO QUE ESTA DENTRO DE ESTA FUNCIÓN Y LA VARIABLE _rotateSpeed
     void Update()
     {
@@ -35,7 +45,7 @@ public class Move : MonoBehaviour
         //float yInput = Input.GetAxis("Vertical");
 
         moveVelocity.x = _speed * xInput;
-        //print(moveVelocity.x + "");
+        
         if(moveVelocity.x != 0 && playerController.isGrounded)
         {
             animator.SetBool("Run", true);
@@ -56,8 +66,11 @@ public class Move : MonoBehaviour
 
         if (playerController.isGrounded)
         {
+            animator.SetBool("IsGrounded", true);
+            animator.SetBool("IsJumping", false);
+            animator.SetBool("IsFalling", false);
             //moveVelocity = transform.right * _speed * xInput;
-            
+
             //moveVelocity = transform.forward * _speed * yInput;
             //turnVelocity = transform.up * _rotateSpeed * xInput;
 
@@ -65,7 +78,21 @@ public class Move : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 moveVelocity.y = _jumpSpeed;
+                animator.SetBool("IsJumping", true);
             }
+        }
+        else
+        {
+            animator.SetBool("IsGrounded", false);
+            if(moveVelocity.y < 0)
+            {
+                animator.SetBool("IsFalling", true);
+            }
+        }
+
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            Attack();
         }
 
         moveVelocity.y += _gravity * Time.deltaTime;
