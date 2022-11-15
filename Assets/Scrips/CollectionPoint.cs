@@ -16,7 +16,8 @@ public class CollectionPoint : MonoBehaviour
         {
             score.puntaje = score.puntaje + 10;
             puntaje = score.puntaje;
-            reference._scoreText.text = "Score: " + puntaje.ToString();
+            ScoreReference.Instance._scoreText.text = "Score: " + puntaje.ToString();
+            
             Destroy(gameObject);
         }
     }
