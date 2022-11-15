@@ -53,6 +53,7 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
         }   else
         {
             Debug.Log("I'm Client");
+            OnPlayerJoinedEvent?.Invoke(runner, player);
         }
     }
 

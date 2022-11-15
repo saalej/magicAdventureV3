@@ -16,6 +16,8 @@ public class ChaseAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Falla porque no sabe la posición del player
+        
         target = player.transform;
     }
 

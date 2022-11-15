@@ -6,7 +6,9 @@ using TMPro;
 
 public class LifeLeft : MonoBehaviour
 {
-    LifeReference lifes;
+
+    private TMP_Text lifeText;
+    private TMP_Text inmunityText;
 
     [SerializeField] private int startLife = 3;
     [SerializeField] private GameObject player;
@@ -16,15 +18,15 @@ public class LifeLeft : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Error
-        lifes._lifeText.text = startLife + "";
+
+        LifeReference.Instance._lifeText.text = startLife + "";
     }
 
     IEnumerator CounterRoutine()
     {
-        while (counter < 21 )
+        while (counter < 21)
         {
-            lifes._inmunityText.text = counter + "";
+            LifeReference.Instance._inmunityText.text = counter + "";
             yield return new WaitForSeconds(1);
             counter++;
         }
@@ -63,6 +65,7 @@ public class LifeLeft : MonoBehaviour
             Destroy(player);
         }
         //Error
-        lifes._lifeText.text = startLife + "";
+        LifeReference.Instance._lifeText.text = startLife + "";
+       
     }
 }
