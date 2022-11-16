@@ -462,7 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothSpeed: 0.15
-  player: {fileID: 4886839378987337284}
+  player: {fileID: 4888065085526090206}
 --- !u!1001 &4886839379296907161
 PrefabInstance:
   m_ObjectHideFlags: 0

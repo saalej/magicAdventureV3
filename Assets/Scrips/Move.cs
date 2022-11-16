@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Fusion;
 
 [RequireComponent(typeof(CharacterController))]
 public class Move : MonoBehaviour
@@ -18,12 +18,8 @@ public class Move : MonoBehaviour
     private bool isJumping;
     private bool isGrounded;
 
-
     CharacterController playerController;
     Vector3 moveVelocity;
-    Vector3 turnVelocity;
-
-    private bool flip;
 
     // Start is called before the first frame update
     void Awake()
@@ -37,6 +33,7 @@ public class Move : MonoBehaviour
         animator.SetTrigger("Attack");
 
     }
+
 
     // NOTA: SI QUIERES MOVIMIENTO Y ROTACIÓN, SOLO DESCOMENTA LO QUE ESTA DENTRO DE ESTA FUNCIÓN Y LA VARIABLE _rotateSpeed
     void Update()

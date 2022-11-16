@@ -17,6 +17,8 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private GameObject panelServer;
     [SerializeField] private GameObject panelPlay;
 
+    SpawnPlayer _spawnPlayer;
+
     async void StartNewGame(GameMode mode)
     {
         //var gameArgs = new StartGameArgs();
@@ -59,12 +61,30 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
     {
-        
+        if(_spawnPlayer._networkObjects.TryGetValue(player, out NetworkObject networkObject))
+        {
+            runner.Despawn(networkObject);
+            _spawnPlayer._networkObjects.Remove(player);
+        }
     }
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
-        
+        NetworkInputData data = new NetworkInputData();
+
+        if (Input.GetKey(KeyCode.W))
+            data.Direction += Vector3.forward;
+
+        if (Input.GetKey(KeyCode.S))
+            data.Direction += Vector3.back;
+
+        if (Input.GetKey(KeyCode.A))
+            data.Direction += Vector3.left;
+
+        if (Input.GetKey(KeyCode.D))
+            data.Direction += Vector3.right;
+
+        input.Set(data);
     }
 
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)
