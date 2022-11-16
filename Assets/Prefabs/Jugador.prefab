@@ -157,6 +157,7 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: -7744692918534943153}
+  - {fileID: 6068823811993435325}
   SimulationBehaviours: []
 --- !u!143 &-3830371899063333629
 CharacterController:
@@ -241,6 +242,7 @@ GameObject:
   - component: {fileID: 4886839379802072186}
   - component: {fileID: 4886839379802072188}
   - component: {fileID: 1326675017557652971}
+  - component: {fileID: 6068823811993435325}
   m_Layer: 0
   m_Name: PolyArtWizardStandardMat
   m_TagString: Player
@@ -290,7 +292,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4888065085526090206}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6db68ba1a4406e4ba381b9f0c1b57ff, type: 3}
   m_Name: 
@@ -373,6 +375,25 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6068823811993435325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4888065085526090206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff37394c85289b4fb73ffff4ce589d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  _characterController: {fileID: -7744692918534943153}
+  _movementSpeed: 10
+  _gravity: -30
+  _jumpSpeed: 20
+  animator: {fileID: 4886839379306289913}
+  body: {fileID: 4886839379296807221}
 --- !u!1 &8172345446057560890
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +495,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PolyArtWizardMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: bed7a092d53e7c748bd65db98cebf9d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100096, guid: bed7a092d53e7c748bd65db98cebf9d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100134, guid: bed7a092d53e7c748bd65db98cebf9d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: bed7a092d53e7c748bd65db98cebf9d6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -526,6 +559,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 0c4e3b80842d43e44af79558352391a7, type: 2}
+    - target: {fileID: 13700000, guid: bed7a092d53e7c748bd65db98cebf9d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: bed7a092d53e7c748bd65db98cebf9d6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

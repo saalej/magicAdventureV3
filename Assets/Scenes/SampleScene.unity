@@ -3419,8 +3419,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  panelServer: {fileID: 0}
-  panelPlay: {fileID: 0}
+  panelServer: {fileID: 1933731702}
+  panelPlay: {fileID: 2132318798}
 --- !u!4 &679404432
 Transform:
   m_ObjectHideFlags: 0
@@ -4437,8 +4437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf7fef9fd814dc4fb155388a93187ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPrefab: {fileID: 4886839378987337284, guid: 8b8043ee1ab15ab409a16bbe5c0a631a, type: 3}
-  _networkObjects: []
+  _playerPrefab: {fileID: 3800974151044167997, guid: 0c5daa8be8935a74b8ec0c54d999d5c2, type: 3}
 --- !u!4 &837853617
 Transform:
   m_ObjectHideFlags: 0
