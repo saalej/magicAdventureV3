@@ -18,10 +18,13 @@ public class SlimeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x >= initialPos.x + 0.5 || transform.position.x <= finalPos.x)
+        /*if(transform.position.x >= initialPos.x || transform.position.x <= finalPos.x)
             transform.Rotate(0f, 180f, 0f, Space.Self);
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);*/
 
-        
+        transform.position = Vector3.Lerp(initialPos, finalPos, Mathf.PingPong(Time.time * speed, 1.0f));
+
+
+
     }
 }

@@ -2269,7 +2269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4023215848608658, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4023215848608658, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8293,7 +8293,7 @@ MonoBehaviour:
   initialPos: {x: 0, y: 0, z: 0}
   finalPos: {x: 0, y: 0, z: 0}
   distance: 8
-  speed: 3
+  speed: 1
 --- !u!4 &1568056273 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4834854334325795838, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
