@@ -10,8 +10,8 @@ public class MoveNetwork : NetworkBehaviour
     [SerializeField] private float _gravity = -10f;
     [SerializeField] private float _jumpSpeed = 5;
 
-    [SerializeField] private Animator animator;
-    [SerializeField] private GameObject body;
+    //[SerializeField] private Animator animator;
+    //[SerializeField] private GameObject body;
 
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class MoveNetwork : NetworkBehaviour
 
     void Attack()
     {
-        animator.SetTrigger("Attack");
+        //animator.SetTrigger("Attack");
     }
 
     public override void FixedUpdateNetwork()
@@ -36,7 +36,7 @@ public class MoveNetwork : NetworkBehaviour
 
             _characterController.Move(data.Direction * Runner.DeltaTime * _movementSpeed);
 
-
+            /*
             if (data.Direction.x != 0 && _characterController.IsGrounded)
             {
                 animator.SetBool("Run", true);
@@ -45,7 +45,8 @@ public class MoveNetwork : NetworkBehaviour
             {
                 animator.SetBool("Run", false);
             }
-
+            */
+            /*
             if (data.Direction.x < 0)
             {
                 body.transform.rotation = Quaternion.Euler(0, -90, 0);
@@ -54,25 +55,28 @@ public class MoveNetwork : NetworkBehaviour
             {
                 body.transform.rotation = Quaternion.Euler(0, 90, 0);
             }
-
+            */
             if (_characterController.IsGrounded)
             {
+                /*
                 animator.SetBool("IsGrounded", true);
                 animator.SetBool("IsJumping", false);
                 animator.SetBool("IsFalling", false);
-
-                if (Input.GetButtonDown("Jump"))
+                */
+                
+                //if (Input.GetButtonDown("Jump"))
+                if(Input.GetKey(KeyCode.Space))
                 {
                     data.Direction.y = _jumpSpeed;
-                    animator.SetBool("IsJumping", true);
+                    //animator.SetBool("IsJumping", true);
                 }
             }
             else
             {
-                animator.SetBool("IsGrounded", false);
+                //animator.SetBool("IsGrounded", false);
                 if (data.Direction.y < 0)
                 {
-                    animator.SetBool("IsFalling", true);
+                    //animator.SetBool("IsFalling", true);
                 }
             }
 
