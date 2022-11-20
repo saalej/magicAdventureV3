@@ -660,6 +660,8 @@ GameObject:
   - component: {fileID: 910587798580773480}
   - component: {fileID: 8585193310533294312}
   - component: {fileID: 6266669021986933438}
+  - component: {fileID: 1894721936354865533}
+  - component: {fileID: 7915759705208872956}
   m_Layer: 0
   m_Name: PolyArtWizardStandardMat
   m_TagString: Player
@@ -729,7 +731,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248815240492774}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6db68ba1a4406e4ba381b9f0c1b57ff, type: 3}
   m_Name: 
@@ -782,7 +784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   InterpolationSpace: 0
-  InterpolationTarget: {fileID: 0}
+  InterpolationTarget: {fileID: 4668634257833992}
   InterpolateErrorCorrection: 1
   InterpolatedErrorCorrectionSettings:
     MinRate: 3.3
@@ -796,11 +798,11 @@ MonoBehaviour:
     RotTeleportRadians: 1.5
   UseLegacySharedModeInterpolation: 0
   TargetInterpolationDelay: 0.03
-  gravity: -20
-  jumpImpulse: 8
-  acceleration: 10
+  gravity: -30
+  jumpImpulse: 30
+  acceleration: 3
   braking: 10
-  maxSpeed: 2
+  maxSpeed: 15
   rotationSpeed: 15
   _IsGrounded: 0
   _Velocity: {x: 0, y: 0, z: 0}
@@ -827,7 +829,41 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 8585193310533294312}
+  - {fileID: 1894721936354865533}
   SimulationBehaviours: []
+--- !u!114 &1894721936354865533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248815240492774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff37394c85289b4fb73ffff4ce589d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  _characterController: {fileID: 8585193310533294312}
+  _movementSpeed: 30
+  _gravity: -30
+  _jumpForce: 5
+  animator: {fileID: 95538263452871118}
+--- !u!114 &7915759705208872956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248815240492774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afdf9ff9348ba5f48ad4ce03341620e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startLife: 3
+  player: {fileID: 1248815240492774}
+  counter: 0
 --- !u!1 &1251583507443948
 GameObject:
   m_ObjectHideFlags: 0

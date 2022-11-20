@@ -71,13 +71,14 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
         NetworkInputData data = new NetworkInputData();
-        /*
-        float xInput = Input.GetAxis("Horizontal");
-
-        data.Direction.x += xInput;
-        */
         
-      
+        float xInput = Input.GetAxis("Horizontal");
+        float yInput = Input.GetAxis("Vertical");
+        
+        data.Direction.x += xInput;
+        data.Direction.y += yInput;
+
+        /*
         if (Input.GetKey(KeyCode.A))
         {
             data.Direction += Vector3.left;
@@ -90,7 +91,7 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
         {
             data.Direction += Vector3.up;
         }
-        
+        */
 
         input.Set(data);
     }
