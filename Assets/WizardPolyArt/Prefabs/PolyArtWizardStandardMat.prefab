@@ -755,7 +755,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 118
   m_CollisionDetection: 0
 --- !u!114 &910587798580773480
 MonoBehaviour:
@@ -800,9 +800,9 @@ MonoBehaviour:
   TargetInterpolationDelay: 0.03
   gravity: -30
   jumpImpulse: 30
-  acceleration: 3
+  acceleration: 5
   braking: 10
-  maxSpeed: 15
+  maxSpeed: 20
   rotationSpeed: 15
   _IsGrounded: 0
   _Velocity: {x: 0, y: 0, z: 0}
@@ -845,10 +845,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   _characterController: {fileID: 8585193310533294312}
-  _movementSpeed: 30
-  _gravity: -30
-  _jumpForce: 5
   animator: {fileID: 95538263452871118}
+  _jumpForce: 5
 --- !u!114 &7915759705208872956
 MonoBehaviour:
   m_ObjectHideFlags: 0
