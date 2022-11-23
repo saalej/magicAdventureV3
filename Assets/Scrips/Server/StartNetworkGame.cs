@@ -17,7 +17,7 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private GameObject panelServer;
     [SerializeField] private GameObject panelPlay;
 
-    MovePhyNetwork _righ;
+    MovePhyNetwork _phy;
 
     SpawnPlayer _spawnPlayer;
 
@@ -76,23 +76,21 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
     {
         NetworkInputData data = new NetworkInputData();
 
-        if (Input.GetKey(KeyCode.A) )//&& _righ._rigidbody.velocity.x > _righ._maxVelocity)
+        if (Input.GetKey(KeyCode.A) )
         {
             data.Direction = Vector3.left;
         }
-        else if (Input.GetKey(KeyCode.D))// && _righ._rigidbody.velocity.x < _righ._maxVelocity)
+        else if (Input.GetKey(KeyCode.D))
         {
             data.Direction = Vector3.right;
         }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            data.Direction = Vector3.up;
+        } 
         else
         {
             data.Direction = Vector3.zero;
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            data.Direction = Vector3.up;
-            //_righ._rigidbody.AddForce(Vector3.up * _righ._jumpForce, ForceMode.Impulse);
         }
 
 
