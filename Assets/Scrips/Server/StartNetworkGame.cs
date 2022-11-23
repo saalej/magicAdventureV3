@@ -17,12 +17,15 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private GameObject panelServer;
     [SerializeField] private GameObject panelPlay;
 
+    MovePhyNetwork _righ;
+
     SpawnPlayer _spawnPlayer;
 
     async void StartNewGame(GameMode mode)
     {
         //var gameArgs = new StartGameArgs();
         //gameArgs.GameMode = mode;
+        Debug.Log("Inicio");
 
         await _networkRunner.StartGame(new StartGameArgs
         { 
@@ -33,11 +36,12 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
         });
 
         _networkRunner.SetActiveScene(_sceneName);
-
+        Debug.Log("Scene Active");
     }
 
     public void StartGameAsHost()
     {
+        Debug.Log("Host");
         StartNewGame(GameMode.AutoHostOrClient);
     }
 
@@ -71,27 +75,26 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
         NetworkInputData data = new NetworkInputData();
-        
-        float xInput = Input.GetAxis("Horizontal");
-        float yInput = Input.GetAxis("Vertical");
-        
-        data.Direction.x += xInput;
-        data.Direction.y += yInput;
 
-        /*
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) )//&& _righ._rigidbody.velocity.x > _righ._maxVelocity)
         {
-            data.Direction += Vector3.left;
+            data.Direction = Vector3.left;
         }
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))// && _righ._rigidbody.velocity.x < _righ._maxVelocity)
         {
-            data.Direction += Vector3.right;
+            data.Direction = Vector3.right;
         }
-        if (Input.GetKey(KeyCode.Space))
+        else
         {
-            data.Direction += Vector3.up;
+            data.Direction = Vector3.zero;
         }
-        */
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            data.Direction = Vector3.up;
+            //_righ._rigidbody.AddForce(Vector3.up * _righ._jumpForce, ForceMode.Impulse);
+        }
+
 
         input.Set(data);
     }

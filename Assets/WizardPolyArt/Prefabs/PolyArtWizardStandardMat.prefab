@@ -655,13 +655,12 @@ GameObject:
   - component: {fileID: 4463868907105534}
   - component: {fileID: 95538263452871118}
   - component: {fileID: 5888669131399602898}
-  - component: {fileID: 3481691125583696993}
   - component: {fileID: 2483049459054695685}
   - component: {fileID: 910587798580773480}
-  - component: {fileID: 8585193310533294312}
-  - component: {fileID: 6266669021986933438}
-  - component: {fileID: 1894721936354865533}
   - component: {fileID: 7915759705208872956}
+  - component: {fileID: 9117241840747141467}
+  - component: {fileID: 1055223187502595967}
+  - component: {fileID: 8138705171631655598}
   m_Layer: 0
   m_Name: PolyArtWizardStandardMat
   m_TagString: Player
@@ -724,23 +723,6 @@ CharacterController:
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &3481691125583696993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248815240492774}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6db68ba1a4406e4ba381b9f0c1b57ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 15
-  _gravity: -30
-  _jumpSpeed: 20
-  animator: {fileID: 95538263452871118}
-  body: {fileID: 1335278543749856}
 --- !u!54 &2483049459054695685
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -755,7 +737,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &910587798580773480
 MonoBehaviour:
@@ -770,7 +752,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puntaje: 0
---- !u!114 &8585193310533294312
+--- !u!114 &7915759705208872956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248815240492774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afdf9ff9348ba5f48ad4ce03341620e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startLife: 3
+  player: {fileID: 1248815240492774}
+  counter: 0
+--- !u!114 &9117241840747141467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248815240492774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c024ce471ca4724a9987091ee95c094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  _characterController: {fileID: 8138705171631655598}
+  animator: {fileID: 95538263452871118}
+  _jumpForce: 15
+  _rigidbody: {fileID: 2483049459054695685}
+--- !u!114 &1055223187502595967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248815240492774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInterest: 1
+  DefaultInterestGroups: []
+  DestroyWhenStateAuthorityLeaves: 0
+  AllowStateAuthorityOverride: 1
+  AoiPositionSource: {fileID: 0}
+  Flags: 2305
+  NetworkGuid:
+    RawGuidValue: ccd8c3b89aa02e943a08ab9238a8a70c
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 9117241840747141467}
+  - {fileID: 8138705171631655598}
+  SimulationBehaviours: []
+--- !u!114 &8138705171631655598
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -798,70 +837,14 @@ MonoBehaviour:
     RotTeleportRadians: 1.5
   UseLegacySharedModeInterpolation: 0
   TargetInterpolationDelay: 0.03
-  gravity: -30
-  jumpImpulse: 30
-  acceleration: 5
+  gravity: -20
+  jumpImpulse: 8
+  acceleration: 10
   braking: 10
-  maxSpeed: 20
+  maxSpeed: 2
   rotationSpeed: 15
   _IsGrounded: 0
   _Velocity: {x: 0, y: 0, z: 0}
---- !u!114 &6266669021986933438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248815240492774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectInterest: 1
-  DefaultInterestGroups: []
-  DestroyWhenStateAuthorityLeaves: 0
-  AllowStateAuthorityOverride: 1
-  AoiPositionSource: {fileID: 0}
-  Flags: 2305
-  NetworkGuid:
-    RawGuidValue: ccd8c3b89aa02e943a08ab9238a8a70c
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 8585193310533294312}
-  - {fileID: 1894721936354865533}
-  SimulationBehaviours: []
---- !u!114 &1894721936354865533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248815240492774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ff37394c85289b4fb73ffff4ce589d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interpolationDataSource: 0
-  _characterController: {fileID: 8585193310533294312}
-  animator: {fileID: 95538263452871118}
-  _jumpForce: 5
---- !u!114 &7915759705208872956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248815240492774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afdf9ff9348ba5f48ad4ce03341620e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startLife: 3
-  player: {fileID: 1248815240492774}
-  counter: 0
 --- !u!1 &1251583507443948
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,21 +44,17 @@ public class AppearDisappearPlatform : MonoBehaviour
     {
         bool isActive = false;
         int i = 0;
-        Debug.Log("Aun no empiza");
        
         if (isActive == true)
         {
-            Debug.Log("Desactivar");
             platform.SetActive(false);
             isActive = false;
         }
         else
         {
-            Debug.Log("Activar");
             platform.SetActive(true);
             isActive = true;
         }
-        Debug.Log(i);
         i += 1;
         yield return new WaitForSeconds(timeAssign);
         

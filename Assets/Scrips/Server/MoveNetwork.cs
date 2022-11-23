@@ -8,7 +8,7 @@ public class MoveNetwork : NetworkBehaviour
     [SerializeField] private NetworkCharacterControllerPrototype _characterController;
 
     [SerializeField] private Animator animator;
-    [SerializeField] private int _jumpForce =2;
+    //[SerializeField] private int _jumpForce =2;
     //[SerializeField] private GameObject body;
 
     
