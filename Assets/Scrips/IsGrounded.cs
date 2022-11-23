@@ -6,6 +6,8 @@ public class IsGrounded : MonoBehaviour
 {
     NetworkInputData data = new NetworkInputData();
 
+    
+
     private void OnTriggerEnter(Collider other)
     {
         data._isGrounded = false;

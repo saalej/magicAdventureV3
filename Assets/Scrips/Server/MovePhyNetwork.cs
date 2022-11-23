@@ -41,6 +41,13 @@ public class MovePhyNetwork : NetworkBehaviour
                 animator.SetBool("Run", false);
             }
 
+            if (Input.GetKey(KeyCode.W) && data._isGrounded == false)
+            {
+                Debug.Log("Jump");
+                _rigidbody.transform.position += (data.Direction * _jumpForce) * Time.deltaTime;
+                animator.SetBool("IsJumping", true);
+            }
+            /*
             Debug.Log(data._isGrounded);
             if (data._isGrounded)
             {
@@ -49,12 +56,7 @@ public class MovePhyNetwork : NetworkBehaviour
                 animator.SetBool("IsJumping", false);
                 animator.SetBool("IsFalling", false);
 
-                if (Input.GetKey(KeyCode.W) && data._isGrounded)
-                {
-                    Debug.Log("Jump");
-                    _rigidbody.transform.position += (data.Direction * _jumpForce) * Time.deltaTime;
-                    animator.SetBool("IsJumping", true);
-                }
+                
             }
             else
             {
@@ -64,7 +66,7 @@ public class MovePhyNetwork : NetworkBehaviour
                     animator.SetBool("IsFalling", true);
                 }
             }
-
+            */
             if (Input.GetKey(KeyCode.Mouse0))
             {
                 Attack();
