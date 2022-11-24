@@ -8,7 +8,7 @@ public class MoveNetwork : NetworkBehaviour
     [SerializeField] private NetworkCharacterControllerPrototypeCustom _characterController;
 
     [SerializeField] private Animator animator;
-    private bool isJumpButtonPressed
+    private bool isJumpButtonPressed;
     //[SerializeField] private int _jumpForce =2;
     //[SerializeField] private GameObject body;
 
