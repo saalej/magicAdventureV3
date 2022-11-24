@@ -5,17 +5,18 @@ using Fusion;
 
 public class MoveNetwork : NetworkBehaviour
 {
-    [SerializeField] private NetworkCharacterControllerPrototype _characterController;
+    [SerializeField] private NetworkCharacterControllerPrototypeCustom _characterController;
 
     [SerializeField] private Animator animator;
-    [SerializeField] private int _jumpForce =2;
+    private bool isJumpButtonPressed
+    //[SerializeField] private int _jumpForce =2;
     //[SerializeField] private GameObject body;
 
-    
+
     // Start is called before the first frame update
     private void Awake()
     {
-        _characterController = GetComponent<NetworkCharacterControllerPrototype>();
+        _characterController = GetComponent<NetworkCharacterControllerPrototypeCustom>();
     }
 
     void Attack()
@@ -23,15 +24,18 @@ public class MoveNetwork : NetworkBehaviour
         //animator.SetTrigger("Attack");
     }
 
+
     public override void FixedUpdateNetwork()
     {
         if (GetInput(out NetworkInputData data))
         {
-            float rotationCharacterY = _characterController.transform.eulerAngles.y;
+            
+            if (Input.GetButtonDown("Jump")) 
+            { 
+                _characterController.Jump();
+            }
 
             _characterController.Move(data.Direction * Runner.DeltaTime);
-            
-            //_characterController.transform.rotation = Quaternion.Euler(0, -90, 0);
 
             if (data.Direction.x != 0 && _characterController.IsGrounded)
             {
