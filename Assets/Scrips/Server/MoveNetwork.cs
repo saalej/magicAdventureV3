@@ -26,8 +26,11 @@ public class MoveNetwork : NetworkBehaviour
     {
         if (GetInput(out NetworkInputData data))
         {
+            data.isGround = _characterController.IsGrounded;
+
             if (data.isJumpButtonPressed && _characterController.IsGrounded)
             {
+                Debug.Log(_characterController.IsGrounded);
                 _characterController.Jump();
 
                 animator.SetBool("IsGrounded", false);
