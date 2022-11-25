@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class ObjectMoveNetworkController : NetworkBehaviour
 {
