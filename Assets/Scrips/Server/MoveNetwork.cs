@@ -8,9 +8,6 @@ public class MoveNetwork : NetworkBehaviour
     [SerializeField] private NetworkCharacterControllerPrototypeCustom _characterController;
 
     [SerializeField] private Animator animator;
-    private bool isJumpButtonPressed;
-    //[SerializeField] private int _jumpForce =2;
-    //[SerializeField] private GameObject body;
 
 
     // Start is called before the first frame update
@@ -57,9 +54,6 @@ public class MoveNetwork : NetworkBehaviour
             {
                 animator.SetBool("Run", false);
             }
-
-
-
 
             if (Input.GetKey(KeyCode.Mouse0))
             {

@@ -81,21 +81,6 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
             data.isJumpButtonPressed = true;
         }
 
-        /*
-        if (Input.GetKey(KeyCode.A))
-        {
-            data.Direction += Vector3.left;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            data.Direction += Vector3.right;
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            data.Direction += Vector3.up;
-        }
-        */
-
         input.Set(data);
     }
 

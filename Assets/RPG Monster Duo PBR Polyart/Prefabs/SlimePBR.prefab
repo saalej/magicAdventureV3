@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 8367609804217378963}
   - component: {fileID: 95094160060757052}
   - component: {fileID: 2244413765780195716}
+  - component: {fileID: 1555683887261678014}
   m_Layer: 0
   m_Name: SlimePBR
   m_TagString: Untagged
@@ -432,9 +433,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &8367609804217378963
 SphereCollider:
@@ -486,6 +487,22 @@ MonoBehaviour:
   attackRange: 2
   player: {fileID: 4886839378987337284, guid: 8b8043ee1ab15ab409a16bbe5c0a631a, type: 3}
   animator: {fileID: 95094160060757052}
+--- !u!114 &1555683887261678014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919012471076396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f76958d3fd0774383692306fe666b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialPos: {x: 0, y: 0, z: 0}
+  finalPos: {x: 0, y: 0, z: 0}
+  distance: 8
+  speed: 1
 --- !u!1 &1989916952965676
 GameObject:
   m_ObjectHideFlags: 0

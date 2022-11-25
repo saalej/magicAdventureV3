@@ -2710,7 +2710,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6503084243758630390}
   - component: {fileID: 6347162357685972182}
-  - component: {fileID: 7105315034257706929}
   - component: {fileID: 2629735247266952057}
   m_Layer: 0
   m_Name: playerMago
@@ -2760,20 +2759,6 @@ MonoBehaviour:
   - {fileID: 5450904672416263866}
   NetworkedBehaviours: []
   SimulationBehaviours: []
---- !u!114 &7105315034257706929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3646765590754933590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09c882972cd7b8e46a2b3ec37dc801aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smoothSpeed: 0.15
-  player: {fileID: 2113948976596521698}
 --- !u!114 &2629735247266952057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2797,7 +2782,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2257624766994572361}
   - component: {fileID: 7754084610055161845}
-  - component: {fileID: 4599186537214050072}
   m_Layer: 0
   m_Name: playerCamera
   m_TagString: MainCamera
@@ -2863,17 +2847,3 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &4599186537214050072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6027047632065708433}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09c882972cd7b8e46a2b3ec37dc801aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smoothSpeed: 0.15
-  player: {fileID: 2113948976596521698}

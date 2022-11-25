@@ -224,6 +224,7 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: -7744692918534943153}
+  - {fileID: 3108030409325472447}
   SimulationBehaviours: []
 --- !u!1 &4888065085526090206
 GameObject:
@@ -461,8 +462,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c882972cd7b8e46a2b3ec37dc801aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
   smoothSpeed: 0.15
-  player: {fileID: 4888065085526090206}
+  _characterController: {fileID: 0}
 --- !u!1001 &4886839379296907161
 PrefabInstance:
   m_ObjectHideFlags: 0
