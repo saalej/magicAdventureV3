@@ -395,7 +395,6 @@ GameObject:
   - component: {fileID: 3691097216577942834}
   - component: {fileID: 8367609804217378963}
   - component: {fileID: 95094160060757052}
-  - component: {fileID: 2244413765780195716}
   - component: {fileID: 1555683887261678014}
   m_Layer: 0
   m_Name: SlimePBR
@@ -470,23 +469,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2244413765780195716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919012471076396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2f2f0ed95ff7f340bcc1ea040ea2c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chaseRange: 5
-  speed: 3
-  attackRange: 2
-  player: {fileID: 4886839378987337284, guid: 8b8043ee1ab15ab409a16bbe5c0a631a, type: 3}
-  animator: {fileID: 95094160060757052}
 --- !u!114 &1555683887261678014
 MonoBehaviour:
   m_ObjectHideFlags: 0
