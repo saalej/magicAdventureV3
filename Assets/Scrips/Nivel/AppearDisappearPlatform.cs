@@ -14,53 +14,17 @@ public class AppearDisappearPlatform : MonoBehaviour
         if(isRandom == true)
         {
             timeRandom = Random.Range(2, 5);
-            StartCoroutine(RandomAppear());
+            InvokeRepeating("ChangeObjectState", 0f, timeRandom);
         } else
         {
-            StartCoroutine(AssignAppear());
+            InvokeRepeating("ChangeObjectState", 0f, timeAssign);
         }
     }
 
-    IEnumerator RandomAppear()
+    private void ChangeObjectState()
     {
-        bool isActive = false;
-        int i = 0;
-        while (i < timeRandom)
-        {
-            if(isActive == true)
-            {
-                platform.SetActive(false);
-                isActive = true;
-            } else
-            {
-                platform.SetActive(true);
-                isActive = false;
-            }
-            yield return new WaitForSeconds(timeRandom);
-        }
+        platform.SetActive(!platform.activeInHierarchy);
     }
 
-    IEnumerator AssignAppear()
-    {
-        bool isActive = false;
-        int i = 0;
-        Debug.Log("Aun no empiza");
-       
-        if (isActive == true)
-        {
-            Debug.Log("Desactivar");
-            platform.SetActive(false);
-            isActive = false;
-        }
-        else
-        {
-            Debug.Log("Activar");
-            platform.SetActive(true);
-            isActive = true;
-        }
-        Debug.Log(i);
-        i += 1;
-        yield return new WaitForSeconds(timeAssign);
-        
-    }
+   
 }
