@@ -1072,7 +1072,7 @@ GameObject:
   - component: {fileID: 3032132741139051088}
   - component: {fileID: 8108804991911328760}
   - component: {fileID: 3032132741139051095}
-  - component: {fileID: 1926979239816385285}
+  - component: {fileID: 388901782850140230}
   m_Layer: 0
   m_Name: PolyArtWizardStandardMat
   m_TagString: Player
@@ -1243,8 +1243,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &1926979239816385285
-CapsuleCollider:
+--- !u!65 &388901782850140230
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1252,11 +1252,10 @@ CapsuleCollider:
   m_GameObject: {fileID: 2113948976596521698}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.3
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.08168602, z: 0.9275781}
+  m_Center: {x: -7.0499293e-17, y: 0.07301092, z: -0.03621094}
 --- !u!1 &2113953483749120460
 GameObject:
   m_ObjectHideFlags: 0
@@ -2726,7 +2725,6 @@ GameObject:
   - component: {fileID: 6503084243758630390}
   - component: {fileID: 6347162357685972182}
   - component: {fileID: 2629735247266952057}
-  - component: {fileID: 7545626024298702760}
   m_Layer: 0
   m_Name: playerMago
   m_TagString: Player
@@ -2773,7 +2771,8 @@ MonoBehaviour:
     RawGuidValue: 5555be3f7fe1dc54d9b27f1ed8c61567
   NestedObjects:
   - {fileID: 5450904672416263866}
-  NetworkedBehaviours: []
+  NetworkedBehaviours:
+  - {fileID: 8126637719750053201}
   SimulationBehaviours: []
 --- !u!114 &2629735247266952057
 MonoBehaviour:
@@ -2787,25 +2786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c622fbd0718bf46bf0a463fa4ba29e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntaje: 0
---- !u!143 &7545626024298702760
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3646765590754933590}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.3
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0.76, y: -2.9, z: 0}
+  puntaje: 30
 --- !u!1 &6027047632065708433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,6 +2797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2257624766994572361}
   - component: {fileID: 7754084610055161845}
+  - component: {fileID: 8126637719750053201}
   m_Layer: 0
   m_Name: playerCamera
   m_TagString: MainCamera
@@ -2881,3 +2863,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &8126637719750053201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6027047632065708433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c882972cd7b8e46a2b3ec37dc801aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  player: {fileID: 2116117277745252602}
+  offset: {x: -5, y: 5, z: -15}
+  cameraSpeed: 10

@@ -10,7 +10,7 @@ public class GhostPlatform : NetworkBehaviour
     [SerializeField] GameObject platform;
 
     public override void FixedUpdateNetwork()
-    {
+    {/*
         if (GetInput(out NetworkInputData data))
         {
             if (data.isGround)
@@ -23,6 +23,7 @@ public class GhostPlatform : NetworkBehaviour
                 ActiveObject();
             }
         }
+        }*/
     }
 
     private void ActiveObject()

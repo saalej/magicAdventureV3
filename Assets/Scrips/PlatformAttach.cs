@@ -10,7 +10,6 @@ public class PlatformAttach : MonoBehaviour
         {
             Debug.Log("ATRAPA");
             other.transform.SetParent(transform);
-
         }
     }
 
