@@ -1067,7 +1067,6 @@ GameObject:
   - component: {fileID: 2116117277745252602}
   - component: {fileID: 2017970137349115338}
   - component: {fileID: 5542505961815213782}
-  - component: {fileID: 1292850205870057068}
   - component: {fileID: 5450904672416263866}
   - component: {fileID: 511520440226207097}
   - component: {fileID: 3032132741139051088}
@@ -1135,19 +1134,6 @@ CharacterController:
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &1292850205870057068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2113948976596521698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3c622fbd0718bf46bf0a463fa4ba29e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puntaje: 0
 --- !u!114 &5450904672416263866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2725,6 +2711,7 @@ GameObject:
   - component: {fileID: 6503084243758630390}
   - component: {fileID: 6347162357685972182}
   - component: {fileID: 7105315034257706929}
+  - component: {fileID: 2629735247266952057}
   m_Layer: 0
   m_Name: playerMago
   m_TagString: Player
@@ -2787,6 +2774,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothSpeed: 0.15
   player: {fileID: 2113948976596521698}
+--- !u!114 &2629735247266952057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3646765590754933590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c622fbd0718bf46bf0a463fa4ba29e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntaje: 0
 --- !u!1 &6027047632065708433
 GameObject:
   m_ObjectHideFlags: 0
