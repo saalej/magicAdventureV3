@@ -21,7 +21,7 @@ public class MoveNetwork : NetworkBehaviour
 
     void Attack()
     {
-        //animator.SetTrigger("Attack");
+        animator.SetTrigger("Attack");
     }
 
 
@@ -29,14 +29,26 @@ public class MoveNetwork : NetworkBehaviour
     {
         if (GetInput(out NetworkInputData data))
         {
-            
-            if (Input.GetButtonDown("Jump")) 
-            { 
+            if (data.isJumpButtonPressed && _characterController.IsGrounded)
+            {
                 _characterController.Jump();
+
+                animator.SetBool("IsGrounded", false);
+                if (data.Direction.y < 0)
+                {
+                    animator.SetBool("IsFalling", true);
+                }
+
+                data.isJumpButtonPressed = false;
+            }
+            else
+            {
+                animator.SetBool("IsGrounded", true);
+                animator.SetBool("IsJumping", false);
+                animator.SetBool("IsFalling", false);
             }
 
             _characterController.Move(data.Direction * Runner.DeltaTime);
-
             if (data.Direction.x != 0 && _characterController.IsGrounded)
             {
                 animator.SetBool("Run", true);
@@ -46,26 +58,13 @@ public class MoveNetwork : NetworkBehaviour
                 animator.SetBool("Run", false);
             }
 
-            if(_characterController.IsGrounded == false)
-            {
-                animator.SetBool("IsGrounded", false);
-                if (data.Direction.y < 0)
-                {
-                    animator.SetBool("IsFalling", true);
-                }
-            } else
-            {
-                animator.SetBool("IsGrounded", true);
-                animator.SetBool("IsJumping", false);
-                animator.SetBool("IsFalling", false);
-            }
-            
+
+
+
             if (Input.GetKey(KeyCode.Mouse0))
             {
                 Attack();
             }
-
-            
         }
         
     }

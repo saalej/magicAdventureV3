@@ -76,6 +76,11 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
         
         data.Direction.x += xInput;
 
+        if (Input.GetButtonDown("Jump"))
+        {
+            data.isJumpButtonPressed = true;
+        }
+
         /*
         if (Input.GetKey(KeyCode.A))
         {

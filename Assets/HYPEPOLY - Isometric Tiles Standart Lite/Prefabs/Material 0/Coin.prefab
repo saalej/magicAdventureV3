@@ -111,8 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dba76fc7de72854a84c343386fb1bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  player: {fileID: 4886839378987337284, guid: 8b8043ee1ab15ab409a16bbe5c0a631a, type: 3}
+  player: {fileID: 3646765590754933590, guid: 5555be3f7fe1dc54d9b27f1ed8c61567, type: 3}
 --- !u!114 &5076802403353893921
 MonoBehaviour:
   m_ObjectHideFlags: 0
