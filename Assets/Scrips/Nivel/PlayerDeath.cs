@@ -7,28 +7,19 @@ public class PlayerDeath : MonoBehaviour
 {
 
     [SerializeField] private GameObject player;
-
+    [SerializeField] private Vector3 respawnPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            //Destroy(other.gameObject);
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            other.transform.position = new Vector3(0f, 5f, 0f);
-            //player.transform.position = new Vector3(0f, 5f, 0f);
+            other.transform.position = respawnPosition;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

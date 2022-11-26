@@ -230,7 +230,7 @@ Transform:
   m_GameObject: {fileID: 43085688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.82, y: -5.4, z: 0}
-  m_LocalScale: {x: 300, y: 1, z: 6}
+  m_LocalScale: {x: 300, y: 1, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4886839378987337284, guid: 8b8043ee1ab15ab409a16bbe5c0a631a, type: 3}
+  respawnPosition: {x: 0, y: 5, z: 0}
 --- !u!1001 &53665416
 PrefabInstance:
   m_ObjectHideFlags: 0
