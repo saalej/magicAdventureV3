@@ -4,7 +4,33 @@ using UnityEngine;
 
 public class SlimeDizzy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private Animator animator;
+    [SerializeField] private byte counter;
+
+    IEnumerator CounterRoutine()
+    {
+        
+        while (counter < 3)
+        {
+            print(counter);
+            yield return new WaitForSeconds(1);
+            counter++;
+        }
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            //animator.SetTrigger("hit");
+            animator.SetBool("Dizzy", true);
+            print("DIZZY");
+            //CounterRoutine();
+            //animator.SetBool("Dizzy", false);
+        }
+    }
+            
     void Start()
     {
         

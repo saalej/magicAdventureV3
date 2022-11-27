@@ -2586,6 +2586,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 780039072}
     - target: {fileID: 1555683887261678014, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
+      propertyPath: dizzyCube
+      value: 
+      objectReference: {fileID: 1252386717}
+    - target: {fileID: 1555683887261678014, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
       propertyPath: attackCube
       value: 
       objectReference: {fileID: 1999845829}
@@ -7361,6 +7365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 461472571af3d5d44a9a16f8a95cf9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 780039072}
+  counter: 0
 --- !u!65 &1252386720
 BoxCollider:
   m_ObjectHideFlags: 0

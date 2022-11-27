@@ -10,7 +10,9 @@ public class SlimeMovement : MonoBehaviour
     [SerializeField] private float speed = 8f;
     [SerializeField] private Animator animator;
     private bool attack;
+    private bool dizzy;
     [SerializeField] private GameObject attackCube;
+    [SerializeField] private GameObject dizzyCube;
 
 
     void FireRay()
@@ -23,6 +25,7 @@ public class SlimeMovement : MonoBehaviour
             animator.SetBool("Attack", true);
             attack = true;
             attackCube.SetActive(true);
+            dizzyCube.SetActive(false);
             //Debug.Log(hitData.transform.tag);
         }
         else
@@ -30,6 +33,7 @@ public class SlimeMovement : MonoBehaviour
             animator.SetBool("Attack", false);
             attack = false;
             attackCube.SetActive(false);
+            dizzyCube.SetActive(true);
         }
         
         //Debug.Log(hitData.distance);
@@ -45,8 +49,13 @@ public class SlimeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        dizzy = animator.GetBool("Dizzy");
+        if (dizzy)
+        {
+            print("estado");
+        }
         //transform.position = Vector3.Lerp(initialPos, finalPos, Mathf.PingPong(Time.time * speed, 1.0f));
-        if (!attack)
+        if (!attack && !dizzy)
         {
             transform.position += transform.forward * Time.deltaTime * speed;
         }
