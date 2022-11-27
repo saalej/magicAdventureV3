@@ -33,13 +33,13 @@ public class LifeLeft : MonoBehaviour
         isInmune = false;
     }
 
-    private void OnCollisionEnter(Collision other)
+    /*private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Enemy" && !isInmune)
         {
             startLife--;
         }
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
@@ -54,6 +54,9 @@ public class LifeLeft : MonoBehaviour
             isInmune = true;
             Destroy(other.gameObject);
             StartCoroutine(CounterRoutine());
+        }else if(other.tag == "Enemy" && !isInmune)
+        {
+            startLife--;
         }
     }
 
@@ -62,7 +65,7 @@ public class LifeLeft : MonoBehaviour
     {
         if (startLife == 0)
         {
-            Destroy(player);
+            //Destroy(player);
         }
         //Error
         LifeReference.Instance._lifeText.text = startLife + "";

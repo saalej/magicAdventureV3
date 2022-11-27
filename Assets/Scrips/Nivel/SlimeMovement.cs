@@ -10,6 +10,7 @@ public class SlimeMovement : MonoBehaviour
     [SerializeField] private float speed = 8f;
     [SerializeField] private Animator animator;
     private bool attack;
+    [SerializeField] private GameObject attackCube;
 
 
     void FireRay()
@@ -21,12 +22,14 @@ public class SlimeMovement : MonoBehaviour
         {
             animator.SetBool("Attack", true);
             attack = true;
+            attackCube.SetActive(true);
             //Debug.Log(hitData.transform.tag);
         }
         else
         {
             animator.SetBool("Attack", false);
             attack = false;
+            attackCube.SetActive(false);
         }
         
         //Debug.Log(hitData.distance);
