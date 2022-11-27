@@ -8,6 +8,7 @@ TagManager:
   - Pit
   - Health
   - Inmunity
+  - Box
   layers:
   - Default
   - TransparentFX

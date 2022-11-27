@@ -8,6 +8,29 @@ public class SlimeMovement : MonoBehaviour
     [SerializeField] private Vector3 finalPos;
     [SerializeField] private int distance;
     [SerializeField] private float speed = 8f;
+    [SerializeField] private Animator animator;
+    private bool attack;
+
+
+    void FireRay()
+    {
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hitData;
+        Physics.Raycast(ray, out hitData);
+        if (hitData.distance < 2 && hitData.transform.tag == "Player")
+        {
+            animator.SetBool("Attack", true);
+            attack = true;
+            //Debug.Log(hitData.transform.tag);
+        }
+        else
+        {
+            animator.SetBool("Attack", false);
+            attack = false;
+        }
+        
+        //Debug.Log(hitData.distance);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +43,11 @@ public class SlimeMovement : MonoBehaviour
     void Update()
     {
         //transform.position = Vector3.Lerp(initialPos, finalPos, Mathf.PingPong(Time.time * speed, 1.0f));
-        transform.position += transform.forward * Time.deltaTime * speed;
+        if (!attack)
+        {
+            transform.position += transform.forward * Time.deltaTime * speed;
+        }
+        
         if (transform.position.x <= finalPos.x)
         {
             transform.rotation = Quaternion.Euler(0, 90, 0);
@@ -29,6 +56,7 @@ public class SlimeMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, -90, 0);
         }
+        FireRay();
 
     }
 }
