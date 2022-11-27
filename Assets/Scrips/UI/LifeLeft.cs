@@ -14,6 +14,7 @@ public class LifeLeft : MonoBehaviour
     [SerializeField] private GameObject player;
     private bool isInmune;
     [SerializeField] private byte counter;
+    [SerializeField] private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,7 @@ public class LifeLeft : MonoBehaviour
             StartCoroutine(CounterRoutine());
         }else if(other.tag == "Enemy" && !isInmune)
         {
+            animator.SetTrigger("Hit");
             startLife--;
         }
     }

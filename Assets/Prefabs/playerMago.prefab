@@ -1228,6 +1228,7 @@ MonoBehaviour:
   startLife: 3
   player: {fileID: 2113948976596521698}
   counter: 0
+  animator: {fileID: 2017970137349115338}
 --- !u!54 &3032132741139051095
 Rigidbody:
   m_ObjectHideFlags: 0
