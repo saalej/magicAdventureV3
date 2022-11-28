@@ -2636,7 +2636,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 05904fa83b9f8494c9ea969c3fd85dbe, type: 2}
     - target: {fileID: 1555683887261678014, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
       propertyPath: speed
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1555683887261678014, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
       propertyPath: animator
@@ -5007,6 +5007,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &854661219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1919012471076396, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
+  m_PrefabInstance: {fileID: 494158169}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &854661223
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854661219}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.16805744, z: 1}
+  m_Center: {x: 0, y: 0.7859092, z: 0}
 --- !u!1001 &864092860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7394,7 +7412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1252386718
 Transform:
   m_ObjectHideFlags: 0

@@ -13,6 +13,35 @@ public class SlimeMovement : MonoBehaviour
     private bool dizzy;
     [SerializeField] private GameObject attackCube;
     [SerializeField] private GameObject dizzyCube;
+    [SerializeField] private byte counter;
+
+    IEnumerator CounterRoutine()
+    {
+        print("counter");
+
+        while (counter < 3)
+        {
+            print(counter);
+            yield return new WaitForSeconds(1);
+            counter++;
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            //animator.SetTrigger("hit");
+            animator.SetTrigger("diz");
+            dizzy = true;
+            //animator.SetBool("Dizzy", true);
+            print("DIZZY");
+            //CounterRoutine();
+            //animator.SetBool("Dizzy", false);
+
+        }
+    }
 
 
     void FireRay()
@@ -49,7 +78,7 @@ public class SlimeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dizzy = animator.GetBool("Dizzy");
+        //dizzy = animator.GetBool("Dizzy");
         if (dizzy)
         {
             print("estado");

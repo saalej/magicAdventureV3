@@ -9,6 +9,7 @@ public class SlimeDizzy : MonoBehaviour
 
     IEnumerator CounterRoutine()
     {
+        print("counter");
         
         while (counter < 3)
         {
@@ -17,6 +18,7 @@ public class SlimeDizzy : MonoBehaviour
             counter++;
         }
         
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,8 +28,9 @@ public class SlimeDizzy : MonoBehaviour
             //animator.SetTrigger("hit");
             animator.SetBool("Dizzy", true);
             print("DIZZY");
-            //CounterRoutine();
-            //animator.SetBool("Dizzy", false);
+            CounterRoutine();
+            animator.SetBool("Dizzy", false);
+
         }
     }
             
