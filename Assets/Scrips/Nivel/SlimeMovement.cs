@@ -49,7 +49,7 @@ public class SlimeMovement : MonoBehaviour
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hitData;
         Physics.Raycast(ray, out hitData);
-        if (hitData.distance < 2 && hitData.transform.tag == "Player")
+        if (hitData.distance < 2 && hitData.transform.tag == "Player" && !animator.GetCurrentAnimatorStateInfo(0).IsName("Dizzy"))
         {
             animator.SetBool("Attack", true);
             attack = true;
@@ -78,15 +78,6 @@ public class SlimeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Dizzy"))
-        {
-            print("estado");
-        }
-        //dizzy = animator.GetBool("Dizzy");
-        if (dizzy)
-        {
-            //print("estado");
-        }
         //transform.position = Vector3.Lerp(initialPos, finalPos, Mathf.PingPong(Time.time * speed, 1.0f));
         if (!attack && !animator.GetCurrentAnimatorStateInfo(0).IsName("Dizzy"))
         {
