@@ -9,7 +9,7 @@ public class PlatformAttach : MonoBehaviour
         if (other.transform.CompareTag("Player"))
         {
             Debug.Log("ATRAPA");
-            other.transform.GetChild(0).SetParent(transform);
+            other.transform.SetParent(transform);
         }
     }
 
@@ -17,7 +17,7 @@ public class PlatformAttach : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
-            other.transform.GetChild(0).parent = null;
+            other.transform.parent = null;
         }
     }
 }
