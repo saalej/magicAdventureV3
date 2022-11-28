@@ -36,7 +36,7 @@ public class SlimeMovement : MonoBehaviour
             animator.SetTrigger("diz");
             dizzy = true;
             //animator.SetBool("Dizzy", true);
-            print("DIZZY");
+            //print("DIZZY");
             //CounterRoutine();
             //animator.SetBool("Dizzy", false);
 
@@ -78,13 +78,17 @@ public class SlimeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //dizzy = animator.GetBool("Dizzy");
-        if (dizzy)
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Dizzy"))
         {
             print("estado");
         }
+        //dizzy = animator.GetBool("Dizzy");
+        if (dizzy)
+        {
+            //print("estado");
+        }
         //transform.position = Vector3.Lerp(initialPos, finalPos, Mathf.PingPong(Time.time * speed, 1.0f));
-        if (!attack && !dizzy)
+        if (!attack && !animator.GetCurrentAnimatorStateInfo(0).IsName("Dizzy"))
         {
             transform.position += transform.forward * Time.deltaTime * speed;
         }
