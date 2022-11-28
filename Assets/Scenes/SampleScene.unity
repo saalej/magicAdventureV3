@@ -5023,8 +5023,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.16805744, z: 1}
-  m_Center: {x: 0, y: 0.7859092, z: 0}
+  m_Size: {x: 0.7936597, y: 0.16805744, z: 0.63108325}
+  m_Center: {x: -0.018939644, y: 0.7859092, z: -0.010252804}
 --- !u!1001 &864092860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10939,7 +10939,7 @@ GameObject:
   - component: {fileID: 1999845830}
   m_Layer: 0
   m_Name: Attack
-  m_TagString: Enemy
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11015,8 +11015,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999845829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.379, z: 1.1563}
-  m_LocalScale: {x: 1, y: 0.598, z: 1.3425}
+  m_LocalPosition: {x: 0, y: 0.379, z: 1.2142}
+  m_LocalScale: {x: 1, y: 0.598, z: 1.4583577}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 780039075}

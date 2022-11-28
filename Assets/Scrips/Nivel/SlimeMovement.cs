@@ -10,36 +10,15 @@ public class SlimeMovement : MonoBehaviour
     [SerializeField] private float speed = 8f;
     [SerializeField] private Animator animator;
     private bool attack;
-    private bool dizzy;
     [SerializeField] private GameObject attackCube;
     [SerializeField] private GameObject dizzyCube;
-    [SerializeField] private byte counter;
 
-    IEnumerator CounterRoutine()
-    {
-        print("counter");
-
-        while (counter < 3)
-        {
-            print(counter);
-            yield return new WaitForSeconds(1);
-            counter++;
-        }
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            //animator.SetTrigger("hit");
             animator.SetTrigger("diz");
-            dizzy = true;
-            //animator.SetBool("Dizzy", true);
-            //print("DIZZY");
-            //CounterRoutine();
-            //animator.SetBool("Dizzy", false);
-
         }
     }
 

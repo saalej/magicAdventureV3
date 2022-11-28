@@ -15,6 +15,7 @@ public class LifeLeft : MonoBehaviour
     private bool isInmune;
     [SerializeField] private byte counter;
     [SerializeField] private Animator animator;
+    [SerializeField] private Animator slimeAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -34,13 +35,6 @@ public class LifeLeft : MonoBehaviour
         isInmune = false;
     }
 
-    /*private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Enemy" && !isInmune)
-        {
-            startLife--;
-        }
-    }*/
 
     private void OnTriggerEnter(Collider other)
     {
@@ -55,8 +49,10 @@ public class LifeLeft : MonoBehaviour
             isInmune = true;
             Destroy(other.gameObject);
             StartCoroutine(CounterRoutine());
-        }else if(other.tag == "Enemy" && !isInmune)
+        }
+        else if(other.tag == "EnemyAttack" && !isInmune)
         {
+            print("attack");
             animator.SetTrigger("Hit");
             startLife--;
         }

@@ -9,6 +9,7 @@ TagManager:
   - Health
   - Inmunity
   - Box
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX
