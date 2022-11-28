@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Fusion;
 
-public class Tower : MonoBehaviour {
+public class Tower : NetworkBehaviour {
     [SerializeField] private Animator animator;
 
     [SerializeField] private float fireSpeed = 3f;
@@ -11,6 +12,8 @@ public class Tower : MonoBehaviour {
     [SerializeField] private Transform muzzle;
     
     [SerializeField] private GameObject projectile;
+
+    LockedOnState _player;
 
     private bool isLockedOn = false;
     public bool LockedOn {
@@ -30,9 +33,7 @@ public class Tower : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.tag == "Player") {
-            animator.SetBool("TankInRange", true);
-        }
+        animator.SetBool("TankInRange", true);
     }
 
     private void OnTriggerExit(Collider other) {
