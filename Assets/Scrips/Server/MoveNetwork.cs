@@ -9,6 +9,7 @@ public class MoveNetwork : NetworkBehaviour
 
     [SerializeField] private Animator animator;
 
+    LockedOnState lockedOnState;
 
     // Start is called before the first frame update
     private void Awake()
@@ -20,7 +21,6 @@ public class MoveNetwork : NetworkBehaviour
     {
         animator.SetTrigger("Attack");
     }
-
 
     public override void FixedUpdateNetwork()
     {
@@ -57,14 +57,14 @@ public class MoveNetwork : NetworkBehaviour
                 }*/
             }
 
-           
-
+            
 
             if (Input.GetKey(KeyCode.Mouse0))
             {
                 Attack();
             }
             _characterController.Move(data.Direction * Runner.DeltaTime);
+
         }
         
     }
