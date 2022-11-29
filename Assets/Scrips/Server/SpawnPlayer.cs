@@ -17,7 +17,7 @@ public class SpawnPlayer : MonoBehaviour
 
         if(_networkObjects.Count == 1)
         {
-            _object.transform.GetChild(0).GetComponent<Camera>().depth = 0;
+            _object.transform.GetChild(1).GetComponent<Camera>().depth = 0;
         }
     }
 }

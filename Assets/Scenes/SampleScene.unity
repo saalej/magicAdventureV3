@@ -1747,7 +1747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 161790, guid: 89941154a1e0c8941a19c8cd8becbe3b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 412818, guid: 89941154a1e0c8941a19c8cd8becbe3b, type: 3}
       propertyPath: m_RootOrder
@@ -8576,7 +8576,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487033799}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: cd513b10ac678364ab77019ee6fc471c, type: 2}
   m_CullingMode: 0
@@ -8616,8 +8616,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.766838, y: 1.4212928, z: 4.881112}
-  m_Center: {x: -0.7064018, y: 1.3785646, z: 0.038497448}
+  m_Size: {x: 4.766838, y: 0.99680376, z: 4.881112}
+  m_Center: {x: -0.7064018, y: 1.5908091, z: 0.038497448}
 --- !u!114 &1487033803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8630,6 +8630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4fa11712e4fea9478a3d5ed9e0dd1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
 --- !u!114 &1487033804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11135,6 +11136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4fa11712e4fea9478a3d5ed9e0dd1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
 --- !u!95 &2001551087
 Animator:
   serializedVersion: 4

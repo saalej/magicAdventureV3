@@ -10,6 +10,7 @@ TagManager:
   - Inmunity
   - Box
   - EnemyAttack
+  - Environment
   layers:
   - Default
   - TransparentFX

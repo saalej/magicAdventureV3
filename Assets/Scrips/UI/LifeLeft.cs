@@ -10,7 +10,7 @@ public class LifeLeft : MonoBehaviour
     private TMP_Text lifeText;
     private TMP_Text inmunityText;
 
-    [SerializeField] private int startLife = 3;
+    [SerializeField] public int startLife = 3;
     [SerializeField] private GameObject player;
     private bool isInmune;
     [SerializeField] private byte counter;

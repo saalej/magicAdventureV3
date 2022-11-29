@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class PlatformAttach : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] float speed;
+
+    void Update()
+    {
+        Time.timeScale = speed;
+    }
+
+    private void OnTriggerStay(Collider other)
     {
         if (other.transform.CompareTag("Player"))
         {
-            Debug.Log("ATRAPA");
+           Debug.Log("ATRAPA");
             other.transform.SetParent(transform);
         }
     }
