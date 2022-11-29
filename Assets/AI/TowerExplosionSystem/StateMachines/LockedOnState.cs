@@ -19,7 +19,6 @@ public class LockedOnState : StateMachineBehaviour {
     // OnStateUpdate se llama en cada marco de actualización entre las devoluciones de llamada OnStateEnter y OnStateExit
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         
-        Debug.Log(player.transform.position);
         animator.gameObject.transform.LookAt(player.transform);
 	}
 

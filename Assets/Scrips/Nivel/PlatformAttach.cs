@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
-public class PlatformAttach : MonoBehaviour
+public class PlatformAttach : NetworkBehaviour
 {
     [SerializeField] float speed;
 
@@ -11,20 +12,28 @@ public class PlatformAttach : MonoBehaviour
         Time.timeScale = speed;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("Player"))
+        
+        if(GetInput(out NetworkInputData data))
         {
-           Debug.Log("ATRAPA");
-            other.transform.SetParent(transform);
+            Debug.Log("Atrapa 1");
+            if (other.transform.CompareTag("Player"))
+            {
+                Debug.Log("Atrapa");
+                data.isPlatformMove = true;
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.CompareTag("Player"))
+        if (GetInput(out NetworkInputData data))
         {
-            other.transform.parent = null;
+            if (other.transform.CompareTag("Player"))
+            {
+                data.isPlatformMove = false;
+            }
         }
     }
 }

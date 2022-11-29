@@ -57,13 +57,19 @@ public class MoveNetwork : NetworkBehaviour
                 }*/
             }
 
-            
-
             if (Input.GetKey(KeyCode.Mouse0))
             {
                 Attack();
             }
-            _characterController.Move(data.Direction * Runner.DeltaTime);
+
+            if (data.isPlatformMove)
+            {
+                _characterController.Move(data.DirectionPlatform * Runner.DeltaTime);
+            } else
+            {
+                _characterController.Move(data.Direction * Runner.DeltaTime);
+            }
+            
 
         }
         
