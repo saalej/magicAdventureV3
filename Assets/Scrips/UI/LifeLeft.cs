@@ -7,15 +7,25 @@ using TMPro;
 public class LifeLeft : MonoBehaviour
 {
 
-    private TMP_Text lifeText;
-    private TMP_Text inmunityText;
-
     [SerializeField] public int startLife = 3;
     [SerializeField] private GameObject player;
     private bool isInmune;
     [SerializeField] private byte counter;
     [SerializeField] private Animator animator;
-    [SerializeField] private Animator slimeAnimator;
+
+    private bool damage = false;
+
+    public bool LifeDamage
+    {
+        get
+        {
+            return damage;
+        }
+        set
+        {
+            damage = value;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +75,13 @@ public class LifeLeft : MonoBehaviour
         {
             //Destroy(player);
         }
-        //Error
+
+        if (damage)
+        {
+            startLife--;
+            damage = false;
+        }
+
         LifeReference.Instance._lifeText.text = startLife + "";
        
     }

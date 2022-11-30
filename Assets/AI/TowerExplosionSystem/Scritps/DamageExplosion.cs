@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class DamageExplosion : MonoBehaviour
 {
+    private int life;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            other.GetComponent<LifeLeft>().startLife -= 1;
+            Debug.Log("DamageExplosion");
+            
         }
         
     }
