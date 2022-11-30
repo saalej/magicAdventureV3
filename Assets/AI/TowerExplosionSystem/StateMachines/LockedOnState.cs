@@ -9,7 +9,7 @@ public class LockedOnState : StateMachineBehaviour {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     // Se llama a OnStateEnter cuando comienza una transición y la máquina de estado comienza a evaluar este estado.
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.Find("PolyArtWizardStandardMat");
         tower = animator.gameObject.GetComponent<Tower>();
         animator.gameObject.transform.LookAt(player.transform);
         tower.LockedOn = true;

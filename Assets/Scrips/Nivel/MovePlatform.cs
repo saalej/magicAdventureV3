@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 
-public class MovePlatform : NetworkBehaviour
+public class MovePlatform : MonoBehaviour
 {
     [SerializeField] private List<Transform> waypoints = new List<Transform>();
     private int targetIndex = 1;
     [SerializeField] private float _speed = 4;
 
-    public override void FixedUpdateNetwork()
+    private void FixedUpdate()
     {
         transform.position = Vector3.MoveTowards(transform.position, waypoints[targetIndex].position, _speed * Time.deltaTime);
         float distance = Vector3.Distance(transform.position, waypoints[targetIndex].position);
@@ -24,12 +24,6 @@ public class MovePlatform : NetworkBehaviour
             {
                 targetIndex++;
             }
-        }
-
-        if (GetInput(out NetworkInputData data))
-        {
-            data.DirectionPlatform += transform.position;
-            Debug.Log(data.DirectionPlatform);
         }
     }
 }

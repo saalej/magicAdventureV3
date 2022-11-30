@@ -9,7 +9,6 @@ public class MoveNetwork : NetworkBehaviour
 
     [SerializeField] private Animator animator;
 
-    LockedOnState lockedOnState;
 
     // Start is called before the first frame update
     private void Awake()
@@ -61,14 +60,9 @@ public class MoveNetwork : NetworkBehaviour
             {
                 Attack();
             }
-
-            if (data.isPlatformMove)
-            {
-                _characterController.Move(data.DirectionPlatform * Runner.DeltaTime);
-            } else
-            {
-                _characterController.Move(data.Direction * Runner.DeltaTime);
-            }
+            
+            _characterController.Move(data.Direction * Runner.DeltaTime);
+            
             
 
         }

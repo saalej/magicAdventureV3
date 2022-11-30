@@ -13,7 +13,7 @@ public class Tower : NetworkBehaviour {
     
     [SerializeField] private GameObject projectile;
 
-    LockedOnState _player;
+    private bool playerEnter;
 
     private bool isLockedOn = false;
     public bool LockedOn {

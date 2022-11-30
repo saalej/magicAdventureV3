@@ -8693,7 +8693,6 @@ GameObject:
   - component: {fileID: 1487033801}
   - component: {fileID: 1487033800}
   - component: {fileID: 1487033802}
-  - component: {fileID: 1487033804}
   - component: {fileID: 1487033805}
   - component: {fileID: 1487033806}
   m_Layer: 0
@@ -8753,30 +8752,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.766838, y: 0.99680376, z: 4.881112}
   m_Center: {x: -0.7064018, y: 1.5908091, z: 0.038497448}
---- !u!114 &1487033804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1487033799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectInterest: 1
-  DefaultInterestGroups: []
-  DestroyWhenStateAuthorityLeaves: 0
-  AllowStateAuthorityOverride: 1
-  AoiPositionSource: {fileID: 0}
-  Flags: 2561
-  NetworkGuid:
-    RawGuidValue: f1ebf24e2c814dc28b8796da6c08bebf
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 1487033805}
-  SimulationBehaviours: []
 --- !u!114 &1487033805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8789,7 +8764,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4b00adf8f2d704ba901a82108390ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interpolationDataSource: 0
   waypoints:
   - {fileID: 22259897}
   - {fileID: 1855722021}
@@ -11336,7 +11310,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2001551088}
   - component: {fileID: 2001551087}
-  - component: {fileID: 2001551086}
   - component: {fileID: 2001551089}
   m_Layer: 0
   m_Name: PlatformMoveVertical
@@ -11345,20 +11318,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2001551086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001551085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4fa11712e4fea9478a3d5ed9e0dd1e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interpolationDataSource: 0
-  speed: 0
 --- !u!95 &2001551087
 Animator:
   serializedVersion: 4
