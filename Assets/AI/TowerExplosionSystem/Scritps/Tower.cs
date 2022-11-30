@@ -33,11 +33,14 @@ public class Tower : NetworkBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        animator.SetBool("TankInRange", true);
+        if (other.CompareTag("Player"))
+        {
+            animator.SetBool("TankInRange", true);
+        }
     }
 
     private void OnTriggerExit(Collider other) {
-        if (other.tag == "Player") {
+        if (other.CompareTag("Player")) {
             animator.SetBool("TankInRange", false);
         }
     }
