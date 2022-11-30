@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Fusion;
 
-public class Tower : NetworkBehaviour {
+public class Tower : MonoBehaviour {
     [SerializeField] private Animator animator;
 
     [SerializeField] private float fireSpeed = 3f;

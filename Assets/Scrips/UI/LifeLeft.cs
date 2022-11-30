@@ -13,20 +13,6 @@ public class LifeLeft : MonoBehaviour
     [SerializeField] private byte counter;
     [SerializeField] private Animator animator;
 
-    private bool damage = false;
-
-    public bool LifeDamage
-    {
-        get
-        {
-            return damage;
-        }
-        set
-        {
-            damage = value;
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -76,11 +62,6 @@ public class LifeLeft : MonoBehaviour
             //Destroy(player);
         }
 
-        if (damage)
-        {
-            startLife--;
-            damage = false;
-        }
 
         LifeReference.Instance._lifeText.text = startLife + "";
        
