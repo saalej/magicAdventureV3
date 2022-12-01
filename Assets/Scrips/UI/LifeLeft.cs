@@ -17,6 +17,7 @@ public class LifeLeft : MonoBehaviour
     
     [SerializeField] private AudioSource power;
     [SerializeField] private AudioSource coin;
+    [SerializeField] private AudioSource bomb;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +60,7 @@ public class LifeLeft : MonoBehaviour
             startLife--;
         }else if(other.tag == "Explosion")
         {
+            bomb.Play();
             animator.SetTrigger("Hit");
         }else if(other.tag == "Coin")
         {
