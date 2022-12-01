@@ -41,16 +41,17 @@ public class LifeLeft : MonoBehaviour
         }
         else if (other.tag == "Inmunity")
         {
-            print("inmunity");
             isInmune = true;
             Destroy(other.gameObject);
             StartCoroutine(CounterRoutine());
         }
         else if(other.tag == "EnemyAttack" && !isInmune)
         {
-            print("attack");
             animator.SetTrigger("Hit");
             startLife--;
+        }else if(other.tag == "Explosion")
+        {
+            animator.SetTrigger("Hit");
         }
     }
 

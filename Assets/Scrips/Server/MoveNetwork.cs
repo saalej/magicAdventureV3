@@ -34,7 +34,6 @@ public class MoveNetwork : NetworkBehaviour
                 animator.SetBool("Run", false);
             }
 
-            Debug.Log(_characterController.IsGrounded);
             if (_characterController.IsGrounded)
             {
                 

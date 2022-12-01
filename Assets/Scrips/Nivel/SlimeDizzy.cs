@@ -18,7 +18,6 @@ public class SlimeDizzy : MonoBehaviour
             counter++;
         }
         
-
     }
 
     private void OnTriggerEnter(Collider other)
