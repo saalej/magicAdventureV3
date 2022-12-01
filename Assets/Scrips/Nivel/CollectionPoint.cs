@@ -9,7 +9,6 @@ public class CollectionPoint : MonoBehaviour
     ScoreReference reference;
     private int puntaje;
     [SerializeField] private GameObject player;
-    [SerializeField] private AudioSource coin;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,8 +18,6 @@ public class CollectionPoint : MonoBehaviour
             score.puntaje = score.puntaje + 10;
             puntaje = score.puntaje;
             ScoreReference.Instance._scoreText.text = puntaje.ToString();
-            //coin.Play();
-
             Destroy(gameObject);
         }
     }

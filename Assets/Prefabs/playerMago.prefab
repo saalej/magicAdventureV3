@@ -1180,7 +1180,6 @@ MonoBehaviour:
   _characterController: {fileID: 3032132741139051088}
   animator: {fileID: 2017970137349115338}
   jump: {fileID: 3054345727648423231}
-  attack: {fileID: 0}
 --- !u!114 &3032132741139051088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1235,8 +1234,8 @@ MonoBehaviour:
   counter: 0
   counter1: 0
   animator: {fileID: 2017970137349115338}
-  coin: {fileID: 0}
   power: {fileID: 6460812821602462128}
+  coin: {fileID: 2810593533197443999}
 --- !u!54 &3032132741139051095
 Rigidbody:
   m_ObjectHideFlags: 0
