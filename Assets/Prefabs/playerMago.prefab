@@ -1182,7 +1182,6 @@ MonoBehaviour:
   _characterController: {fileID: 3032132741139051088}
   animator: {fileID: 2017970137349115338}
   jump: {fileID: 3054345727648423231}
-  land: {fileID: 0}
 --- !u!114 &3032132741139051088
 MonoBehaviour:
   m_ObjectHideFlags: 0

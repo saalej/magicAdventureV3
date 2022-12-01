@@ -13,11 +13,14 @@ public class SlimeMovement : MonoBehaviour
     [SerializeField] private GameObject attackCube;
     [SerializeField] private GameObject dizzyCube;
 
+    [SerializeField] private AudioSource hit;
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            hit.Play();
             animator.SetTrigger("diz");
         }
     }
