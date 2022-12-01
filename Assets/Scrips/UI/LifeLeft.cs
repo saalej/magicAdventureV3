@@ -18,6 +18,8 @@ public class LifeLeft : MonoBehaviour
     [SerializeField] private AudioSource power;
     [SerializeField] private AudioSource coin;
     [SerializeField] private AudioSource bomb;
+    [SerializeField] private AudioSource hit;
+
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +59,7 @@ public class LifeLeft : MonoBehaviour
         else if(other.tag == "EnemyAttack" && !isInmune)
         {
             animator.SetTrigger("Hit");
+            hit.Play();
             startLife--;
         }else if(other.tag == "Explosion")
         {

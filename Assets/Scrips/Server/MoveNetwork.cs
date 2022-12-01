@@ -9,6 +9,7 @@ public class MoveNetwork : NetworkBehaviour
 
     [SerializeField] private Animator animator;
     [SerializeField] private AudioSource jump;
+    [SerializeField] private AudioSource land;
     //[SerializeField] private AudioSource attack;
 
 
