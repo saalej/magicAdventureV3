@@ -11,6 +11,7 @@ public class LifeLeft : MonoBehaviour
     [SerializeField] private GameObject player;
     private bool isInmune;
     [SerializeField] private byte counter;
+    [SerializeField] private byte counter1;
     [SerializeField] private Animator animator;
 
     // Start is called before the first frame update
@@ -22,11 +23,12 @@ public class LifeLeft : MonoBehaviour
 
     IEnumerator CounterRoutine()
     {
-        while (counter < 21)
+        counter1 = 10;
+        while (counter1 >= 0)
         {
-            LifeReference.Instance._inmunityText.text = counter + "";
+            LifeReference.Instance._inmunityText.text = counter1 + "";
             yield return new WaitForSeconds(1);
-            counter++;
+            counter1--;
         }
         isInmune = false;
     }
