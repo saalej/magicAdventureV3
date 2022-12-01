@@ -16148,7 +16148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bf3851513d99d054a8e0645046cab23e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.55
+      value: 4.37
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bf3851513d99d054a8e0645046cab23e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -36060,7 +36060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 011b5b2ae1c0e764a981b516f10f2a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 0.2
+  amplitude: 1
   speed: 2
   tempVal: 0
   tempPos: {x: 0, y: 0, z: 0}
@@ -36075,8 +36075,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4187821, y: 1.4187821, z: 0.19130963}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.4187821, y: 1.4187821, z: 0.35173115}
+  m_Center: {x: 0, y: 0, z: -0.011458705}
 --- !u!4 &1871860579 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7060381642040426190, guid: f928cfed68cd2fa41a97871b63b7d54c, type: 3}
@@ -48231,6 +48231,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5558574829646558705, guid: 60b45b313859a6e4d81412597a18e877, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8704033
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558574829646558705, guid: 60b45b313859a6e4d81412597a18e877, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0014882169
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558574829646558705, guid: 60b45b313859a6e4d81412597a18e877, type: 3}
+      propertyPath: m_Center.y
+      value: 0.017091325
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558574829646558705, guid: 60b45b313859a6e4d81412597a18e877, type: 3}
+      propertyPath: m_Center.z
+      value: -0.04659737
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558574829646558709, guid: 60b45b313859a6e4d81412597a18e877, type: 3}
+      propertyPath: amplitude
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5558574830071289553, guid: 60b45b313859a6e4d81412597a18e877, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -48241,7 +48261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5558574830071289553, guid: 60b45b313859a6e4d81412597a18e877, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.72
+      value: 4.34
       objectReference: {fileID: 0}
     - target: {fileID: 5558574830071289553, guid: 60b45b313859a6e4d81412597a18e877, type: 3}
       propertyPath: m_LocalPosition.z
