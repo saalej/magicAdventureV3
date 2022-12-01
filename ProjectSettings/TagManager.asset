@@ -12,6 +12,7 @@ TagManager:
   - EnemyAttack
   - Environment
   - Explosion
+  - Coin
   layers:
   - Default
   - TransparentFX

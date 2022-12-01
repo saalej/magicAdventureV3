@@ -8,6 +8,8 @@ public class MoveNetwork : NetworkBehaviour
     [SerializeField] private NetworkCharacterControllerPrototypeCustom _characterController;
 
     [SerializeField] private Animator animator;
+    [SerializeField] private AudioSource jump;
+    //[SerializeField] private AudioSource attack;
 
 
     // Start is called before the first frame update
@@ -43,18 +45,13 @@ public class MoveNetwork : NetworkBehaviour
                 if (data.isJumpButtonPressed)
                 {
                     animator.SetBool("IsJumping", true);
+                    jump.Play();
                     _characterController.Jump();
                 }
             }
             else
             {
-                //Debug.Log(data.Direction);
                 animator.SetBool("IsGrounded", false);
-                /*if (data.Direction.y < 0)
-                {
-                    animator.SetBool("IsFalling", true);
-                    print("toi caiendo");
-                }*/
             }
 
             if (Input.GetKey(KeyCode.Mouse0))

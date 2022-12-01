@@ -14,6 +14,9 @@ public class LifeLeft : MonoBehaviour
     [SerializeField] private byte counter1;
     [SerializeField] private Animator animator;
 
+    
+    [SerializeField] private AudioSource power;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +42,13 @@ public class LifeLeft : MonoBehaviour
         if (other.tag == "Health")
         {
             startLife += 3;
+            power.Play();
             Destroy(other.gameObject);
         }
         else if (other.tag == "Inmunity")
         {
             isInmune = true;
+            power.Play();
             Destroy(other.gameObject);
             StartCoroutine(CounterRoutine());
         }
