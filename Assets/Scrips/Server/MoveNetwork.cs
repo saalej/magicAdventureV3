@@ -34,8 +34,10 @@ public class MoveNetwork : NetworkBehaviour
                 animator.SetBool("Run", false);
             }
 
+            Debug.Log(_characterController.IsGrounded);
             if (_characterController.IsGrounded)
             {
+                
                 animator.SetBool("IsGrounded", true);
                 animator.SetBool("IsFalling", false);
                 animator.SetBool("IsJumping", false);

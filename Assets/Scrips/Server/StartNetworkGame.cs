@@ -73,10 +73,12 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
         NetworkInputData data = new NetworkInputData();
         
         float xInput = Input.GetAxis("Horizontal");
-        
+        float yInput = Input.GetAxis("Vertical");
+
         data.Direction.x += xInput;
 
-        if (Input.GetButtonDown("Jump"))
+
+        if (yInput > 0)
         {
             data.isJumpButtonPressed = true;
         }

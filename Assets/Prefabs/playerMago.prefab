@@ -1207,7 +1207,7 @@ MonoBehaviour:
   gravity: -30
   jumpImpulse: 20
   acceleration: 15
-  braking: 10
+  braking: 30
   maxSpeed: 15
   rotationSpeed: 15
   viewUpDownRotationSpeed: 50
@@ -1229,7 +1229,6 @@ MonoBehaviour:
   player: {fileID: 2113948976596521698}
   counter: 0
   animator: {fileID: 2017970137349115338}
-  slimeAnimator: {fileID: 0}
 --- !u!54 &3032132741139051095
 Rigidbody:
   m_ObjectHideFlags: 0
