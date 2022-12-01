@@ -13,7 +13,7 @@ public class LifeLeft : MonoBehaviour
     [SerializeField] private byte counter;
     [SerializeField] private byte counter1;
     [SerializeField] private Animator animator;
-
+    private int money;
     
     [SerializeField] private AudioSource power;
     [SerializeField] private AudioSource coin;
@@ -31,17 +31,14 @@ public class LifeLeft : MonoBehaviour
 
     IEnumerator CounterRoutine()
     {
-        print("{inicio cortina");
         counter1 = 10;
         while (counter1 >= 0)
         {
-            print("counter" + counter1);
             LifeReference.Instance._inmunityText.text = counter1 + "";
             yield return new WaitForSeconds(1);
             counter1--;
             if(counter1 == 0)
             {
-                print("Salido");
                 isInmune = false;
                 LifeReference.Instance._inmunityText.text = 0 + "";
                 yield break;
@@ -77,6 +74,8 @@ public class LifeLeft : MonoBehaviour
             animator.SetTrigger("Hit");
         }else if(other.tag == "Coin")
         {
+            //print(money + "");
+            money += 10;
             coin.Play();
         }
     }

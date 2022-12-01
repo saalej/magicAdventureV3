@@ -5,5 +5,25 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    [SerializeField] public int puntaje = 0;
+    [SerializeField] private int puntaje = 0;
+
+    public int ScoreInicial
+    {
+        get
+        {
+            return puntaje;
+        }
+
+        set
+        {
+            puntaje = value;
+        }
+    }
+
+    void Start()
+    {
+        puntaje = 0;
+    }
+
+    
 }
