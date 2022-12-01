@@ -26,18 +26,27 @@ public class LifeLeft : MonoBehaviour
     {
 
         LifeReference.Instance._lifeText.text = startLife + "";
+        LifeReference.Instance._inmunityText.text = 0 + "";
     }
 
     IEnumerator CounterRoutine()
     {
+        print("{inicio cortina");
         counter1 = 10;
         while (counter1 >= 0)
         {
+            print("counter" + counter1);
             LifeReference.Instance._inmunityText.text = counter1 + "";
             yield return new WaitForSeconds(1);
             counter1--;
+            if(counter1 == 0)
+            {
+                print("Salido");
+                isInmune = false;
+                LifeReference.Instance._inmunityText.text = 0 + "";
+                yield break;
+            }
         }
-        isInmune = false;
     }
 
 
@@ -55,6 +64,7 @@ public class LifeLeft : MonoBehaviour
             power.Play();
             Destroy(other.gameObject);
             StartCoroutine(CounterRoutine());
+            StopCoroutine(CounterRoutine());
         }
         else if(other.tag == "EnemyAttack" && !isInmune)
         {
