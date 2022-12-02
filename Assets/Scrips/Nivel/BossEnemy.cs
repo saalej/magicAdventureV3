@@ -13,8 +13,9 @@ public class BossEnemy : MonoBehaviour
 
     private IEnumerator KillOnAnimationEnd()
     {
-        animator.Play("Die");
-        die.Play();
+        //print("enmerator");
+        
+        
         yield return new WaitForSeconds(3f);
         gameObject.SetActive(false);
         win.SetActive(true);
@@ -62,6 +63,8 @@ public class BossEnemy : MonoBehaviour
         FireRay();
         if (hits >= 3)
         {
+            animator.Play("Die");
+            die.Play();
             StartCoroutine(KillOnAnimationEnd());
         }
 
