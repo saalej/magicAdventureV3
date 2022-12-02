@@ -19,6 +19,8 @@ public class LifeLeft : MonoBehaviour
     [SerializeField] private AudioSource coin;
     [SerializeField] private AudioSource bomb;
     [SerializeField] private AudioSource hit;
+    [SerializeField] private AudioSource win;
+
 
 
     // Start is called before the first frame update
@@ -77,6 +79,9 @@ public class LifeLeft : MonoBehaviour
             //print(money + "");
             money += 10;
             coin.Play();
+        }else if(other.tag == "Win")
+        {
+            win.Play();
         }
     }
 

@@ -37,7 +37,6 @@ public class SlimeMovement : MonoBehaviour
             attack = true;
             attackCube.SetActive(true);
             dizzyCube.SetActive(false);
-            //Debug.Log(hitData.transform.tag);
         }
         else
         {
@@ -46,8 +45,6 @@ public class SlimeMovement : MonoBehaviour
             attackCube.SetActive(false);
             dizzyCube.SetActive(true);
         }
-        
-        //Debug.Log(hitData.distance);
     }
 
     // Start is called before the first frame update

@@ -12,6 +12,8 @@ public class MoveNetwork : NetworkBehaviour
     public bool isAttacking;
     [SerializeField] private GameObject attackBox;
 
+    [SerializeField] private AudioSource attack;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -56,6 +58,7 @@ public class MoveNetwork : NetworkBehaviour
 
             if (Input.GetKey(KeyCode.Mouse0))
             {
+                attack.Play();
                 Attack();
             }
             

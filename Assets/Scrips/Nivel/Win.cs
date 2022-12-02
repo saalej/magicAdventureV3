@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
-    [SerializeField] private AudioSource win;
+    
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            win.Play();
-            print("GANASTE CTM");
+            //win.Play();
             gameObject.SetActive(false);
         }
     }

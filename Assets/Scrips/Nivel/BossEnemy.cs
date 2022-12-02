@@ -13,9 +13,6 @@ public class BossEnemy : MonoBehaviour
 
     private IEnumerator KillOnAnimationEnd()
     {
-        //print("enmerator");
-        
-        
         yield return new WaitForSeconds(3f);
         gameObject.SetActive(false);
         win.SetActive(true);
@@ -28,6 +25,10 @@ public class BossEnemy : MonoBehaviour
             print("player");
             animator.SetTrigger("Hit");
             hits++;
+        }
+        if(hits >= 3)
+        {
+            die.Play();
         }
 
 
@@ -64,7 +65,6 @@ public class BossEnemy : MonoBehaviour
         if (hits >= 3)
         {
             animator.Play("Die");
-            die.Play();
             StartCoroutine(KillOnAnimationEnd());
         }
 
