@@ -15,6 +15,7 @@ public class BossEnemy : MonoBehaviour
         animator.Play("Die");
         yield return new WaitForSeconds(3f);
         gameObject.SetActive(false);
+        win.SetActive(true);
     }
 
     void OnTriggerEnter(Collider other)
