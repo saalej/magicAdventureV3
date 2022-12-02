@@ -5,10 +5,22 @@ using UnityEngine;
 public class BossEnemy : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private Animator animatorPlayer;
     //[SerializeField] private int distance;
 
-    void FireRay()
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            Debug.Break();
+            print("playerr");
+            if (other.gameObject.GetComponent<MoveNetwork>().isAttacking)
+            {
+                animator.SetTrigger("Hit");
+            }
+        }
+    }
+
+        void FireRay()
     {
         Ray ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(transform.position, transform.forward, Color.green);
@@ -17,12 +29,12 @@ public class BossEnemy : MonoBehaviour
         if (hitData.distance < 9 && hitData.distance > 4 && hitData.transform.tag == "Player")
         {
             animator.SetBool("isAround", true);
-            print("isaround");
+            //print("isaround");
             //animator.SetTrigger("diz");
         }
         else if(hitData.distance <= 4 && hitData.transform.tag == "Player")
         {
-            print("attack");
+            //print("attack");
             animator.SetBool("Attack", true);
             animator.SetBool("isAround", false);
         }
