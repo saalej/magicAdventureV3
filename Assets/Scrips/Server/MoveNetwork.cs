@@ -10,7 +10,7 @@ public class MoveNetwork : NetworkBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private AudioSource jump;
     public bool isAttacking;
-    
+    [SerializeField] private GameObject attackBox;
 
     // Start is called before the first frame update
     private void Awake()
@@ -71,10 +71,12 @@ public class MoveNetwork : NetworkBehaviour
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02Start"))
         {
+            attackBox.SetActive(true);
             isAttacking = true;
         }
         else
         {
+            attackBox.SetActive(false);
             isAttacking = false;
         }
     }

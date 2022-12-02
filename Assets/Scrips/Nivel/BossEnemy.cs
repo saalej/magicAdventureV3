@@ -9,12 +9,16 @@ public class BossEnemy : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "AttackBox")
         {
-            Debug.Break();
+            //Debug.Break();
             print("playerr");
+            //Debug.Log(other.gameObject.GetComponent<MoveNetwork>().isAttacking);
+
+
             if (other.gameObject.GetComponent<MoveNetwork>().isAttacking)
             {
+                
                 animator.SetTrigger("Hit");
             }
         }
