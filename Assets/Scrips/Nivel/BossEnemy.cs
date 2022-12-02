@@ -23,17 +23,11 @@ public class BossEnemy : MonoBehaviour
         Debug.DrawRay(transform.position, transform.forward, Color.green);
         RaycastHit hitData;
         Physics.Raycast(ray, out hitData);
-        if (hitData.distance < 9 && hitData.distance > 4 && hitData.transform.tag == "Player")
+        if (hitData.distance < 9 && hitData.transform.tag == "Player")
         {
             animator.SetBool("isAround", true);
             //print("isaround");
             //animator.SetTrigger("diz");
-        }
-        else if(hitData.distance <= 4 && hitData.transform.tag == "Player")
-        {
-            //print("attack");
-            animator.SetTrigger("at");
-            //animator.SetBool("isAround", false);
         }
         else
         {
