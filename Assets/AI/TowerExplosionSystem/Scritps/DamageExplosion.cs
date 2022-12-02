@@ -11,8 +11,13 @@ public class DamageExplosion : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("DamageExplosion");
-            other.gameObject.GetComponent<LifeLeft>().startLife--;
+            //
+            if (!other.gameObject.GetComponent<LifeLeft>().isInmune)
+            {
+                Debug.Log("DamageExplosion");
+                other.gameObject.GetComponent<LifeLeft>().startLife--;
+            }
+            
         }
         
     }

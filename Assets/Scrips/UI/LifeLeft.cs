@@ -7,9 +7,9 @@ using TMPro;
 public class LifeLeft : MonoBehaviour
 {
 
-    [SerializeField] public int startLife = 3;
+    [SerializeField] public int startLife = 10;
     [SerializeField] private GameObject player;
-    private bool isInmune;
+    public bool isInmune;
     [SerializeField] private byte counter;
     [SerializeField] private byte counter1;
     [SerializeField] private Animator animator;
