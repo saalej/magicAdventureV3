@@ -5,22 +5,15 @@ using UnityEngine;
 public class BossEnemy : MonoBehaviour
 {
     [SerializeField] private Animator animator;
+    private bool attacked;
     //[SerializeField] private int distance;
 
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "AttackBox")
         {
-            //Debug.Break();
-            print("playerr");
-            //Debug.Log(other.gameObject.GetComponent<MoveNetwork>().isAttacking);
-
-
-            if (other.gameObject.GetComponent<MoveNetwork>().isAttacking)
-            {
-                
-                animator.SetTrigger("Hit");
-            }
+            print("player");
+            animator.SetTrigger("Hit");
         }
     }
 
@@ -39,12 +32,12 @@ public class BossEnemy : MonoBehaviour
         else if(hitData.distance <= 4 && hitData.transform.tag == "Player")
         {
             //print("attack");
-            animator.SetBool("Attack", true);
-            animator.SetBool("isAround", false);
+            animator.SetTrigger("at");
+            //animator.SetBool("isAround", false);
         }
         else
         {
-            animator.SetBool("Attack", false);
+            //animator.SetBool("Attack", false);
             animator.SetBool("isAround", false);
         }
     }
