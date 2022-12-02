@@ -9,7 +9,6 @@ public class BossEnemy : MonoBehaviour
     private int hits;
     [SerializeField] private GameObject win;
     [SerializeField] private AudioSource die;
-    //[SerializeField] private int distance;
 
     private IEnumerator KillOnAnimationEnd()
     {
