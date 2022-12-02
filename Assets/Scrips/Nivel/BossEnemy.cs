@@ -8,11 +8,13 @@ public class BossEnemy : MonoBehaviour
     private bool attacked;
     private int hits;
     [SerializeField] private GameObject win;
+    [SerializeField] private AudioSource die;
     //[SerializeField] private int distance;
 
     private IEnumerator KillOnAnimationEnd()
     {
         animator.Play("Die");
+        die.Play();
         yield return new WaitForSeconds(3f);
         gameObject.SetActive(false);
         win.SetActive(true);
