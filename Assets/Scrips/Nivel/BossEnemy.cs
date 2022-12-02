@@ -6,7 +6,16 @@ public class BossEnemy : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     private bool attacked;
+    private int hits;
+    [SerializeField] private GameObject win;
     //[SerializeField] private int distance;
+
+    private IEnumerator KillOnAnimationEnd()
+    {
+        animator.Play("Die");
+        yield return new WaitForSeconds(3f);
+        gameObject.SetActive(false);
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -14,7 +23,10 @@ public class BossEnemy : MonoBehaviour
         {
             print("player");
             animator.SetTrigger("Hit");
+            hits++;
         }
+
+
     }
 
         void FireRay()
@@ -26,8 +38,6 @@ public class BossEnemy : MonoBehaviour
         if (hitData.distance < 9 && hitData.transform.tag == "Player")
         {
             animator.SetBool("isAround", true);
-            //print("isaround");
-            //animator.SetTrigger("diz");
         }
         else
         {
@@ -47,6 +57,10 @@ public class BossEnemy : MonoBehaviour
     void Update()
     {
         FireRay();
-        
+        if (hits >= 3)
+        {
+            StartCoroutine(KillOnAnimationEnd());
+        }
+
     }
 }
